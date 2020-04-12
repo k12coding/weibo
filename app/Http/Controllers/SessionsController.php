@@ -21,9 +21,13 @@ class SessionsController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request,['captcha' => 'required|captcha'],[
+            'captcha.required' => '验证码不能为空',
+            'captcha.captcha' => '请输入正确的验证码',
+        ]);
         $credentials = $this->validate($request, [
         'email' => 'required|email|max:255',
-        'password' => 'required'
+        'password' => 'required',
         ]);
 
         if (Auth::attempt($credentials, $request->has('remember'))) {
