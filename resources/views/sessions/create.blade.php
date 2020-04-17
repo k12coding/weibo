@@ -21,9 +21,9 @@
 
         <div class="form-group">
           <label for="captcha">验证码:</label>
-          <div class="media">
-            <input class="form-control col-lg-9 media-body" type="text"  maxlength="4" name="captcha" >
-            <img class="media-right" border="0" style="cursor:pointer" title='点击刷新验证码' alt="点击刷新验证码"  src="{{captcha_src()}}"  onclick="this.src='{{captcha_src()}}?r='+Math.random();">
+          <div class="form-inline">
+            <input class="form-control col-lg-9 media-body" type="text"  maxlength="4" name="captcha" id="captcha">
+            <img  border="0" style="cursor:pointer" title='点击刷新验证码' alt="点击刷新验证码"  src="{{captcha_src()}}"  onclick="this.src='{{captcha_src()}}?r='+Math.random();">
           </div>
         </div>
 
